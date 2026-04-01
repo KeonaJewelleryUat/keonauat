@@ -1,0 +1,85 @@
+.common-collection-section {
+  margin: 1px auto; /* centers horizontally */
+  width: 100%;
+  margin-top: 40px;
+  background-color: #fff;
+  text-align: center;
+  padding-bottom: 20px;
+  color: #103520;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.common-collection-heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  font-family: "Playfair Display", serif;
+  position: relative;
+}
+
+.common-collection-heading h2 {
+  font-family: "RoxboroughCF", serif;
+  font-size: 56px;
+  font-weight: bold;
+  margin-inline: 12px;
+  white-space: nowrap;
+  color: #000;
+}
+
+.common-line {
+  margin-inline: 20px;
+  flex: 1;
+  height: 2px;
+  background-color: #c4a44d; /* gold line */
+  opacity: 0.9;
+}
+
+.common-star {
+  color: #c4a44d; /* gold star */
+  font-size: 1.8rem;
+}
+
+.common-collection-subtext-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+}
+
+.common-collection-subtext {
+  font-size: 26px;
+  color: #2c4e36;
+  font-family: "FrunchySage", sans-serif;
+  letter-spacing: 0.5px;
+  max-width: 600px;
+  font-style: italic;
+  text-align: center;
+  line-height: 1.6;
+}
+
+/* ---------------- MOBILE ---------------- */
+@media (max-width: 768px) {
+  .common-collection-heading h2 {
+    font-size: 20px;
+    margin-inline: 6px;
+  }
+
+  .common-collection-subtext {
+    font-size: 16px;
+    padding: 0 10px;
+  }
+
+  /* optional: tighten spacing so it looks balanced */
+  .common-line {
+    margin-inline: 10px;
+  }
+
+  .common-star {
+    font-size: 1rem;
+  }
+}

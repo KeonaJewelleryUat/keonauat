@@ -1,0 +1,73 @@
+// earringsData.ts
+export const earrings = [
+  {
+    id: 1,
+    name: "Pearl Drop Earrings",
+    imagePath: "/earrings/earring1.png",
+    price: 1200,
+    pieces: 4,
+  },
+  {
+    id: 2,
+    name: "Gold Hoop Earrings",
+    imagePath: "/earrings/earring2.png",
+    price: 1500,
+    pieces: 10,
+  },
+  {
+    id: 3,
+    name: "Silver Stud Earrings",
+    imagePath: "/earrings/earring3.png",
+    price: 800,
+    pieces: 6,
+  },
+  {
+    id: 4,
+    name: "Diamond Dangle Earrings",
+    imagePath: "/earrings/earring4.png",
+    price: 3200,
+    pieces: 0,
+  },
+  {
+    id: 5,
+    name: "Pearl Drop Earrings",
+    imagePath: "/earrings/earring1.png",
+    price: 1200,
+    pieces: 4,
+  },
+  {
+    id: 6,
+    name: "Gold Hoop Earrings",
+    imagePath: "/earrings/earring2.png",
+    price: 1500,
+    pieces: 10,
+  },
+  {
+    id: 7,
+    name: "Silver Stud Earrings",
+    imagePath: "/earrings/earring3.png",
+    price: 800,
+    pieces: 6,
+  },
+  {
+    id: 8,
+    name: "Diamond Dangle Earrings",
+    imagePath: "/earrings/earring4.png",
+    price: 3200,
+    pieces: 0,
+  },
+  {
+    id: 9,
+    name: "Gold Hoop Earrings",
+    imagePath: "/earrings/earring2.png",
+    price: 1500,
+    pieces: 10,
+  },
+  {
+    id: 10,
+    name: "Silver Stud Earrings",
+    imagePath: "/earrings/earring3.png",
+    price: 800,
+    pieces: 6,
+  },
+];

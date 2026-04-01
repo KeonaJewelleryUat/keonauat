@@ -1,0 +1,318 @@
+/* GLOBAL RESET */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.home-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ---------------- HERO SECTION ---------------- */
+
+.carousel-div {
+  position: relative;
+  top: 30px;
+  width: 96%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  background: #103520;
+  border-radius: 16px;
+  box-shadow: 0 6px 15px #515c4d;
+  overflow: hidden;
+  padding: 30px;
+  color: white;
+  gap: 20px;
+}
+
+/* TEXT */
+.text-section {
+  flex: 1 1 45%;
+  max-width: 45%;
+}
+
+.text-section h1 {
+  font-size: 46px;
+  font-family: "TanPearl", sans-serif;
+  margin-bottom: 12px;
+}
+
+.text-section p {
+  font-size: 22px;
+  font-family: "FrunchySage", sans-serif;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.explore-btn {
+  background-color: white;
+  color: #103520;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* CAROUSEL */
+.carousel-section {
+  flex: 1 1 50%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* ---------------- TRENDING ---------------- */
+
+.trending-section {
+  width: 100%;
+  margin-top: 60px;
+  text-align: center;
+  color: #103520;
+}
+
+.trending-section h2 {
+  font-family: "AngsanaNew", serif;
+  font-size: 35px;
+  margin: 20px 0;
+}
+
+.trending-carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.trending-items-wrapper {
+  width: 90%;
+  overflow: hidden;
+}
+
+.trending-items {
+  display: flex;
+  gap: 40px;
+  will-change: transform;
+}
+
+.trending-item-container {
+  flex: 0 0 auto;
+}
+
+.trending-item {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid #10352092;
+  box-shadow: 0 6px 15px rgba(16, 53, 32, 0.5);
+  transition: 0.3s;
+}
+
+.trending-item:hover {
+  transform: scale(1.08);
+}
+
+.trending-item-text {
+  margin-top: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: "RoxboroughCF", serif;
+}
+
+/* ---------------- COLLECTION ---------------- */
+
+.collection-section {
+  margin-top: 25px;
+  width: 96%;
+  text-align: center;
+  padding: 60px 0 20px;
+  color: #103520;
+}
+
+.collection-heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.collection-heading h2 {
+  font-family: "RoxboroughCF", serif;
+  font-size: 56px;
+  margin: 0 12px;
+}
+
+.line {
+  flex: 1;
+  height: 2px;
+  background-color: #c4a44d;
+}
+
+.star {
+  color: #c4a44d;
+}
+
+.collection-subtext {
+  font-size: 24px;
+  max-width: 600px;
+  margin: 20px auto 0;
+}
+
+/* ---------------- CIRCLE BUTTONS ---------------- */
+
+.circle-buttons-section {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 40px;
+}
+
+.circle-buttons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 50px 80px;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: 1s;
+}
+
+.circle-buttons.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.circle-btn-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.circle-btn {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-size: cover;
+  border: 4px solid #10352092;
+  box-shadow: 0 8px 25px rgba(16, 53, 32, 0.6);
+  transition: 0.3s;
+}
+
+.circle-btn:hover {
+  transform: scale(1.08);
+}
+
+.circle-btn-text {
+  margin-top: 12px;
+  font-weight: 600;
+}
+
+/* ---------------- RESPONSIVE ---------------- */
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .carousel-div {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .text-section {
+    max-width: 100%;
+  }
+
+  .text-section h1 {
+    font-size: 26px;
+  }
+
+  .text-section p {
+    font-size: 15px;
+  }
+
+  .carousel-section {
+    justify-content: center;
+  }
+
+  .explore-btn {
+    width: 100%;
+  }
+
+  .trending-item {
+    width: 70px;
+    height: 70px;
+  }
+
+  .trending-items {
+    gap: 20px;
+  }
+
+  .trending-section h2 {
+    font-size: 24px;
+  }
+
+  .collection-heading h2 {
+    font-size: 28px;
+  }
+
+  .collection-subtext {
+    font-size: 16px;
+    padding: 0 10px;
+  }
+
+  .circle-buttons {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .circle-btn {
+    width: 140px;
+    height: 140px;
+  }
+}
+
+/* TABLET */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .text-section h1 {
+    font-size: 34px;
+  }
+
+  .text-section p {
+    font-size: 18px;
+  }
+
+  .circle-btn {
+    width: 170px;
+    height: 170px;
+  }
+}
+
+/* ---------------- MOBILE FIX FOR HERO SECTION ---------------- */
+@media (max-width: 768px) {
+  .carousel-div {
+    flex-direction: column; /* stack vertically */
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .text-section {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .text-section h1 {
+    font-size: 28px;
+  }
+
+  .text-section p {
+    font-size: 16px;
+  }
+
+  .carousel-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}

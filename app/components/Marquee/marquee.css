@@ -1,0 +1,32 @@
+.marquee-container {
+  width: 100%;
+  overflow: hidden;
+  background-color: #bcd0b594;
+  color: #103520;
+  padding: 8px 0;
+  position: relative;
+}
+
+.marquee-text {
+  display: flex;
+  white-space: nowrap;
+  animation: scroll-left 5s linear infinite;
+}
+
+.marquee-text span {
+  display: inline-block;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  word-spacing: 40px; /* ✅ spacing between phrases */
+  padding-right: 100px; /* ✅ gap between the two spans */
+}
+
+/* ✅ Continuous scroll keyframes */
+@keyframes scroll-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}

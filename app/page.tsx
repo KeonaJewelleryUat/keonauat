@@ -1,65 +1,187 @@
-import Image from "next/image";
+"use client";
 
-export default function Home() {
+import { useEffect, useRef, useState } from "react";
+import Carousel from "./components/Carousel/carousel";
+import "./home.css";
+
+export default function HomePage() {
+  const sectionRef = useRef<HTMLDivElement | null>(null);
+  const [animate, setAnimate] = useState(false);
+
+  const trendingRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const track = trendingRef.current;
+    if (!track) return;
+
+    let pos = 0;
+    const speed = 0.6;
+    let paused = false;
+    let rafId: number;
+
+    const animate = () => {
+      if (!paused) {
+        pos -= speed;
+        track.style.transform = `translateX(${pos}px)`;
+
+        const firstChild = track.children[0] as HTMLElement;
+        const firstChildWidth = firstChild.offsetWidth + 40; // 40 = your gap
+
+        // When first item is fully out of view, move it to end
+        if (Math.abs(pos) >= firstChildWidth) {
+          track.appendChild(firstChild);
+          pos += firstChildWidth;
+          track.style.transform = `translateX(${pos}px)`;
+        }
+      }
+
+      rafId = requestAnimationFrame(animate);
+    };
+
+    const onEnter = () => (paused = true);
+    const onLeave = () => (paused = false);
+
+    track.addEventListener("mouseenter", onEnter);
+    track.addEventListener("mouseleave", onLeave);
+    track.addEventListener("touchstart", onEnter);
+    track.addEventListener("touchend", onLeave);
+
+    rafId = requestAnimationFrame(animate);
+
+    return () => {
+      cancelAnimationFrame(rafId);
+      track.removeEventListener("mouseenter", onEnter);
+      track.removeEventListener("mouseleave", onLeave);
+      track.removeEventListener("touchstart", onEnter);
+      track.removeEventListener("touchend", onLeave);
+    };
+  }, []);
+
+  useEffect(() => {
+    const el = sectionRef.current;
+    if (!el) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const entry = entries[0];
+        if (entry.isIntersecting) {
+          // restart animation every time it comes into view
+          setAnimate(false);
+          void el.offsetWidth;
+          setAnimate(true);
+        } else {
+          // reset when leaving viewport
+          setAnimate(false);
+        }
+      },
+      { threshold: 0.35 }
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <div className="home-container">
+      {/* Base + carousel (unchanged) */}
+      <div className="base-div"></div>
+      <div className="carousel-div">
+        <div className="text-section">
+          <h1>Anti Tarnish Jewellery</h1>
+          <p>
+            Discover handcrafted jewellery that speaks of grace, tradition, and
+            modern charm. Each piece tells its own story of beauty.
           </p>
+          <button className="explore-btn">Explore Now</button>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+        <div className="carousel-section">
+          <Carousel />
         </div>
-      </main>
+      </div>
+      {/* Trending Now Section */}
+      <section className="trending-section">
+        <h2>TRENDING NOW</h2>
+        <div className="trending-carousel">
+          <button className="carousel-arrow left">{"<"}</button>
+
+          <div className="trending-items-wrapper">
+            <div className="trending-items" ref={trendingRef}>
+              {[
+                { img: "/rings.jpg", text: "Rings" },
+                { img: "/earrings.jpg", text: "Earrings" },
+                { img: "/necklace.png", text: "Necklaces" },
+                { img: "/bracelet.jpg", text: "Bracelets" },
+                { img: "/rings.jpg", text: "Rings" },
+                { img: "/earrings.jpg", text: "Earrings" },
+                { img: "/necklace.png", text: "Necklaces" },
+                { img: "/bracelet.jpg", text: "Bracelets" },
+                { img: "/necklace.png", text: "Necklaces" },
+                { img: "/bracelet.jpg", text: "Bracelets" },
+              ].map((item, i) => (
+                <div key={i} className="trending-item-container">
+                  <div className="trending-item">
+                    <img src={item.img} alt={item.text} />
+                  </div>
+                  <p className="trending-item-text">{item.text}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <button className="carousel-arrow right">{">"}</button>
+        </div>
+      </section>
+
+      {/* Collection heading (unchanged) */}
+      <section className="collection-section">
+        <div className="collection-heading">
+          <span className="line"></span>
+          <span className="star">✶</span>
+          <h2>Our Collection</h2>
+          <span className="star">✶</span>
+          <span className="line"></span>
+        </div>
+        <p className="collection-subtext">
+          Handpicked pieces crafted with precision, elegance, and passion.
+        </p>
+      </section>
+
+      {/* Floating Circle Buttons Section */}
+      <section className="circle-buttons-section" ref={sectionRef}>
+        <div className={`circle-buttons ${animate ? "animate" : ""}`}>
+          <div className="circle-btn-container">
+            <button
+              className="circle-btn"
+              style={{ backgroundImage: "url('/rings.jpg')" }}
+            ></button>
+            <p className="circle-btn-text">Rings</p>
+          </div>
+
+          <div className="circle-btn-container">
+            <button
+              className="circle-btn"
+              style={{ backgroundImage: "url('/earrings.jpg')" }}
+            ></button>
+            <p className="circle-btn-text">Earrings</p>
+          </div>
+
+          <div className="circle-btn-container">
+            <button
+              className="circle-btn"
+              style={{ backgroundImage: "url('/necklace.png')" }}
+            ></button>
+            <p className="circle-btn-text">Necklaces</p>
+          </div>
+
+          <div className="circle-btn-container">
+            <button
+              className="circle-btn"
+              style={{ backgroundImage: "url('/bracelet.jpg')" }}
+            ></button>
+            <p className="circle-btn-text">Bracelets</p>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

@@ -1,26 +1,62 @@
-@import "tailwindcss";
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* app/globals.css */
+@font-face {
+  font-family: "RoxboroughCF";
+  src: url("/roxborough-cf-bold.otf") format("opentype");
+  font-weight: bold;
+  font-style: normal;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@font-face {
+  font-family: "Maharlika";
+  src: url("/Maharlika-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* --- Roxborough CF Regular --- */
+@font-face {
+  font-family: "RoxboroughCF";
+  src: url("/roxborough-cf-regular.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "FrunchySage";
+  src: url("/frunchy-sage.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "TanPearl";
+  src: url("/tan-pearl.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "AngsanaNew";
+  src: url("/angsa.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Calgary";
+  src: url("/Calgary.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: white; /* light green background for whole page */
+  font-family: Arial, sans-serif;
+  color: #222;
 }
