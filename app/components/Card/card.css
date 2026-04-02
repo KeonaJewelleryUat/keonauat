@@ -6,7 +6,7 @@
   overflow: hidden;
   box-shadow: 0 6px 18px rgba(16, 53, 32, 0.15);
   text-align: center;
-  margin: 16px;
+  /* margin: 6px; */
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;

@@ -1,0 +1,73 @@
+// necklaceData.ts
+export const necklace = [
+  {
+    id: 1,
+    name: "Diamond necklace",
+    imagePath: "/necklace/necklace1.png",
+    price: 1200,
+    pieces: 4,
+  },
+  {
+    id: 2,
+    name: "Gold Leaf necklace",
+    imagePath: "/necklace/necklace2.png",
+    price: 1500,
+    pieces: 10,
+  },
+  {
+    id: 3,
+    name: "Wave necklace",
+    imagePath: "/necklace/necklace3.png",
+    price: 800,
+    pieces: 6,
+  },
+  {
+    id: 4,
+    name: "Double Hoop necklace",
+    imagePath: "/necklace/necklace4.png",
+    price: 3200,
+    pieces: 0,
+  },
+  {
+    id: 5,
+    name: "Pearl Drop necklace",
+    imagePath: "/necklace/necklace1.png",
+    price: 1200,
+    pieces: 4,
+  },
+  {
+    id: 6,
+    name: "Gold Hoop necklace",
+    imagePath: "/necklace/necklace2.png",
+    price: 1500,
+    pieces: 10,
+  },
+  {
+    id: 7,
+    name: "Silver Stud necklace",
+    imagePath: "/necklace/necklace3.png",
+    price: 800,
+    pieces: 6,
+  },
+  {
+    id: 8,
+    name: "Diamond Dangle necklace",
+    imagePath: "/necklace/necklace4.png",
+    price: 3200,
+    pieces: 0,
+  },
+  {
+    id: 9,
+    name: "Gold Hoop necklace",
+    imagePath: "/necklace/necklace2.png",
+    price: 1500,
+    pieces: 10,
+  },
+  {
+    id: 10,
+    name: "Silver Stud necklace",
+    imagePath: "/necklace/necklace3.png",
+    price: 800,
+    pieces: 6,
+  },
+];

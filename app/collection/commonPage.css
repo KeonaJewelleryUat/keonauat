@@ -1,0 +1,21 @@
+/* .collection-section {
+  width: 96%;
+  background-color: #fff;
+  text-align: center;
+  padding-top: 60px;
+  padding-bottom: 20px;
+  color: #103520;
+} */
+
+.collection-header {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-start;
+  gap: 12px;
+  margin-top: 10px;
+}

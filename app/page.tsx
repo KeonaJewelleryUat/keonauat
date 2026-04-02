@@ -3,6 +3,8 @@
 import { useEffect, useRef, useState } from "react";
 import Carousel from "./components/Carousel/carousel";
 import "./home.css";
+import EarringsPage from "./collection/earrings/page";
+import Link from "next/link";
 
 export default function HomePage() {
   const sectionRef = useRef<HTMLDivElement | null>(null);
@@ -149,37 +151,37 @@ export default function HomePage() {
       {/* Floating Circle Buttons Section */}
       <section className="circle-buttons-section" ref={sectionRef}>
         <div className={`circle-buttons ${animate ? "animate" : ""}`}>
-          <div className="circle-btn-container">
+          <Link href="/collection/rings" className="circle-btn-container">
             <button
               className="circle-btn"
               style={{ backgroundImage: "url('/rings.jpg')" }}
             ></button>
             <p className="circle-btn-text">Rings</p>
-          </div>
+          </Link>
 
-          <div className="circle-btn-container">
+          <Link href="/collection/earrings" className="circle-btn-container">
             <button
               className="circle-btn"
               style={{ backgroundImage: "url('/earrings.jpg')" }}
             ></button>
             <p className="circle-btn-text">Earrings</p>
-          </div>
+          </Link>
 
-          <div className="circle-btn-container">
+          <Link href="/collection/necklaces" className="circle-btn-container">
             <button
               className="circle-btn"
               style={{ backgroundImage: "url('/necklace.png')" }}
             ></button>
             <p className="circle-btn-text">Necklaces</p>
-          </div>
+          </Link>
 
-          <div className="circle-btn-container">
+          <Link href="/collection/bracelets" className="circle-btn-container">
             <button
               className="circle-btn"
               style={{ backgroundImage: "url('/bracelet.jpg')" }}
             ></button>
             <p className="circle-btn-text">Bracelets</p>
-          </div>
+          </Link>
         </div>
       </section>
     </div>

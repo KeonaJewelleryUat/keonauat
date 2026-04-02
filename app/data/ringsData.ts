@@ -1,0 +1,73 @@
+// ringData.ts
+export const ring = [
+  {
+    id: 1,
+    name: "Diamond Ring",
+    imagePath: "/rings/ring1.png",
+    price: 1200,
+    pieces: 4,
+  },
+  {
+    id: 2,
+    name: "Gold Leaf Ring",
+    imagePath: "/rings/ring2.png",
+    price: 1500,
+    pieces: 10,
+  },
+  {
+    id: 3,
+    name: "Wave Ring",
+    imagePath: "/rings/ring3.png",
+    price: 800,
+    pieces: 6,
+  },
+  {
+    id: 4,
+    name: "Double Hoop Ring",
+    imagePath: "/rings/ring4.png",
+    price: 3200,
+    pieces: 0,
+  },
+  {
+    id: 5,
+    name: "Pearl Drop ring",
+    imagePath: "/rings/ring1.png",
+    price: 1200,
+    pieces: 4,
+  },
+  {
+    id: 6,
+    name: "Gold Hoop ring",
+    imagePath: "/rings/ring2.png",
+    price: 1500,
+    pieces: 10,
+  },
+  {
+    id: 7,
+    name: "Silver Stud ring",
+    imagePath: "/rings/ring3.png",
+    price: 800,
+    pieces: 6,
+  },
+  {
+    id: 8,
+    name: "Diamond Dangle ring",
+    imagePath: "/rings/ring4.png",
+    price: 3200,
+    pieces: 0,
+  },
+  {
+    id: 9,
+    name: "Gold Hoop ring",
+    imagePath: "/rings/ring2.png",
+    price: 1500,
+    pieces: 10,
+  },
+  {
+    id: 10,
+    name: "Silver Stud ring",
+    imagePath: "/rings/ring3.png",
+    price: 800,
+    pieces: 6,
+  },
+];

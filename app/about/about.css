@@ -1,0 +1,110 @@
+/* ---------------- HERO SECTION ---------------- */
+
+/* .carousel-div {
+  position: relative;
+  top: 30px;
+  width: 96%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  background: #103520;
+  border-radius: 16px;
+  box-shadow: 0 6px 15px #515c4d;
+  overflow: hidden;
+  padding: 30px;
+  color: white;
+  gap: 20px;
+} */
+.page-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.carousel-div {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+/* TEXT */
+.text-section-div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #103520;
+  border-radius: 16px;
+  color: white;
+  padding: 15px;
+}
+
+.text-section-div h1 {
+  font-size: 46px;
+  font-family: "TanPearl", sans-serif;
+  margin-bottom: 20px;
+}
+
+.text-section-div p {
+  margin-top: 10px;
+  font-size: 16px;
+  font-family: "RoxboroughCF", sans-serif;
+  line-height: 1.6;
+  letter-spacing: 0.8px;
+  margin-bottom: 20px;
+  font-weight: 100;
+}
+
+.collection-subtext {
+  font-size: 24px;
+  max-width: 600px;
+  margin: 20px auto 0;
+}
+
+.founder-container {
+  margin: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 50px;
+}
+
+.founder-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 15px;
+  padding: 15px;
+  width: 320px;
+  height: 400px;
+  background-color: #bcd0b594;
+  box-shadow: 0 6px 15px #515c4d;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+}
+
+.founder-image {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden; /* VERY IMPORTANT */
+  position: relative;
+  box-shadow: 0px 6px 6px #515c4d;
+}
+
+.founder-name {
+  margin-top: 25px;
+  margin-bottom: 10px;
+  font-size: 24px;
+  font-family: "RoxboroughCF";
+  font-weight: bold;
+}
+
+.founder-role {
+  font-size: 18px;
+  font-family: "RoxboroughCF";
+  font-style: italic;
+}

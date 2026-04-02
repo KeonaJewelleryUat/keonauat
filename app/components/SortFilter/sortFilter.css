@@ -1,0 +1,128 @@
+/* .collection-section {
+  width: 96%;
+  background-color: #fff;
+  text-align: center;
+  padding-top: 60px;
+  padding-bottom: 20px;
+  color: #103520;
+} */
+button {
+  display: flex;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+.actions {
+  margin-left: 20px;
+}
+/* Button */
+.action-btn {
+  padding: 8px 14px;
+  border: 1px solid #ddd;
+  background: white;
+  cursor: pointer;
+  border-radius: 6px;
+  font-size: 22px !important;
+  font-family: "AngsanaNew";
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  color: rgb(49, 46, 46);
+}
+
+/* Dropdown wrapper */
+.dropdown {
+  position: relative;
+}
+
+/* Hidden by default */
+.dropdown-menu {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  background: white;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  padding: 10px;
+  min-width: 180px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.2s ease;
+  z-index: 10;
+}
+
+/* SHOW ON HOVER */
+.dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Sort options */
+.dropdown-menu p {
+  padding: 8px;
+  cursor: pointer;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.dropdown-menu p:hover {
+  background-color: #f5f5f5;
+}
+
+/* Filter specific */
+.filter-menu {
+  width: 220px;
+}
+
+/* Checkbox */
+.filter-item {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+/* Price */
+.price-range p {
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+.price-range input {
+  width: 100%;
+}
+
+.price-values {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+.icon-btn {
+  display: flex;
+  gap: 6px;
+  font-size: 16px;
+}
+
+.icon {
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* .action-btn:hover .icon {
+  transform: translateY(-1px);
+  transition: 0.2s ease;
+} */
+@media (max-width: 768px) {
+  .dropdown-menu.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,73 @@
+// braceletData.ts
+export const bracelet = [
+  {
+    id: 1,
+    name: "Diamond bracelet",
+    imagePath: "/bracelets/bracelet1.png",
+    price: 1200,
+    pieces: 4,
+  },
+  {
+    id: 2,
+    name: "Gold Leaf bracelet",
+    imagePath: "/bracelets/bracelet2.png",
+    price: 1500,
+    pieces: 10,
+  },
+  {
+    id: 3,
+    name: "Wave bracelet",
+    imagePath: "/bracelets/bracelet3.png",
+    price: 800,
+    pieces: 6,
+  },
+  {
+    id: 4,
+    name: "Double Hoop bracelet",
+    imagePath: "/bracelets/bracelet4.png",
+    price: 3200,
+    pieces: 0,
+  },
+  {
+    id: 5,
+    name: "Pearl Drop bracelet",
+    imagePath: "/bracelets/bracelet1.png",
+    price: 1200,
+    pieces: 4,
+  },
+  {
+    id: 6,
+    name: "Gold Hoop bracelet",
+    imagePath: "/bracelets/bracelet2.png",
+    price: 1500,
+    pieces: 10,
+  },
+  {
+    id: 7,
+    name: "Silver Stud bracelet",
+    imagePath: "/bracelets/bracelet3.png",
+    price: 800,
+    pieces: 6,
+  },
+  {
+    id: 8,
+    name: "Diamond Dangle bracelet",
+    imagePath: "/bracelets/bracelet4.png",
+    price: 3200,
+    pieces: 0,
+  },
+  {
+    id: 9,
+    name: "Gold Hoop bracelet",
+    imagePath: "/bracelets/bracelet2.png",
+    price: 1500,
+    pieces: 10,
+  },
+  {
+    id: 10,
+    name: "Silver Stud bracelet",
+    imagePath: "/bracelets/bracelet3.png",
+    price: 800,
+    pieces: 6,
+  },
+];

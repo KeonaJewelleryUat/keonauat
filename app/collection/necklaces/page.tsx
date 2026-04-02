@@ -2,30 +2,33 @@
 
 import { useState } from "react";
 import "./../commonPage.css";
-import { earrings } from "../../data/earringsData";
+import { necklace } from "../../data/necklaceData";
 import Card from "@/app/components/Card/card";
 import CollectionHeading from "@/app/components/Collection Heading/collectionHeading";
 import SortFilter from "@/app/components/SortFilter/sortFilter";
 
-export default function EarringsPage() {
-  const [filteredEarrings, setFilteredEarrings] = useState(earrings);
+export default function NecklacesPage() {
+  const [filterednecklaces, setFilterednecklaces] = useState(necklace);
 
   return (
     <div>
       <div className="collection-header">
         <CollectionHeading
-          title="Earrings Collection"
-          subtext="Timeless designs, modern elegance – explore our earrings today."
+          title="Necklaces Collection"
+          subtext="Timeless designs, modern elegance – explore our necklaces today."
         />
 
         <div className="actions">
-          <SortFilter items={earrings} setFilteredItems={setFilteredEarrings} />
+          <SortFilter
+            items={necklace}
+            setFilteredItems={setFilterednecklaces}
+          />
         </div>
       </div>
 
       {/* Cards */}
       <div className="cards-grid">
-        {filteredEarrings.map((item) => (
+        {filterednecklaces.map((item) => (
           <Card
             key={item.id}
             id={item.id}
