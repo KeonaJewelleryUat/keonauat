@@ -60,3 +60,30 @@ body {
   font-family: Arial, sans-serif;
   color: #222;
 }
+
+/* ============================= */
+/* LAYOUT FIX (IMPORTANT) */
+/* ============================= */
+
+html,
+body {
+  height: 100%;
+}
+
+/* Main layout */
+.layout-body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Prevent header + marquee from shrinking */
+.top-section {
+  flex-shrink: 0;
+}
+
+/* Main content expands */
+.main-content {
+  flex: 1;
+  width: 100%;
+}
