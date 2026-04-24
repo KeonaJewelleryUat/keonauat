@@ -1,0 +1,23 @@
+.order-container {
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 20px;
+  font-family: sans-serif;
+  color: #103520;
+}
+
+.order-header {
+  font-family: "Calgary";
+  letter-spacing: 2px;
+  font-size: 46px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.order-description {
+  font-size: 28px;
+  line-height: 1;
+  margin-bottom: 15px;
+  text-align: left;
+  font-family: "AngsanaNew";
+}

@@ -8,6 +8,7 @@ import Footer from "./components/Footer/Footer";
 import "./globals.css";
 import WhatsappPopup from "./components/WhatsappPopup/whatsappPopup";
 import WhatsappFloat from "./components/WhatsappFloat/whatsappFloat";
+import SecondPopup from "./components/SecondPopup/secondPopup";
 
 export default function RootLayout({
   children,
@@ -15,8 +16,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   const [showPopup, setShowPopup] = useState(false);
+  const [showSecondPopup, setShowSecondPopup] = useState(false);
 
-  // ✅ AUTO SHOW ONLY ONCE PER SESSION
+  // ✅ First popup (WhatsApp)
   useEffect(() => {
     const hasShown = sessionStorage.getItem("popupShown");
 
@@ -24,11 +26,21 @@ export default function RootLayout({
       const timer = setTimeout(() => {
         setShowPopup(true);
         sessionStorage.setItem("popupShown", "true");
-      }, 3000); // delay (optional)
+      }, 3000);
 
       return () => clearTimeout(timer);
     }
   }, []);
+
+  // ✅ Handle closing first popup
+  const handleCloseWhatsapp = () => {
+    setShowPopup(false);
+
+    // 👇 Show second popup AFTER closing first
+    setTimeout(() => {
+      setShowSecondPopup(true);
+    }, 3000); // delay after close (you can tweak)
+  };
 
   return (
     <html lang="en">
@@ -42,10 +54,16 @@ export default function RootLayout({
 
         <Footer />
 
-        {/* ✅ Popup */}
-        <WhatsappPopup show={showPopup} onClose={() => setShowPopup(false)} />
+        {/* ✅ First Popup */}
+        <WhatsappPopup show={showPopup} onClose={handleCloseWhatsapp} />
 
-        {/* ✅ Floating Button (manual trigger) */}
+        {/* ✅ Second Popup */}
+        <SecondPopup
+          show={showSecondPopup}
+          onClose={() => setShowSecondPopup(false)}
+        />
+
+        {/* ✅ Floating Button */}
         <WhatsappFloat onClick={() => setShowPopup(true)} />
       </body>
     </html>

@@ -104,7 +104,7 @@ export default function Header() {
           About Us
         </Link>
 
-        <Link href="/order" className="nav-link" onClick={handleNavClick}>
+        <Link href="/placeOrder" className="nav-link" onClick={handleNavClick}>
           Place Order
         </Link>
       </nav>
